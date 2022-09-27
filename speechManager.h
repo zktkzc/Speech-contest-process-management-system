@@ -11,6 +11,9 @@ public:
 
 	void showMenu();
 
+	//ÍË³öÏµÍ³
+	void exitSystem();
+
 	~SpeechManager();
 };
 

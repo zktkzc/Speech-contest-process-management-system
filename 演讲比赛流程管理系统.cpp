@@ -25,6 +25,7 @@ int main()
 		case 3:  //清空记录
 			break;
 		case 0:  //退出系统
+			sm.exitSystem();
 			break;
 		default:
 			system("cls"); //清屏
