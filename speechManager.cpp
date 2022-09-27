@@ -68,6 +68,62 @@ void SpeechManager::createSpeaker()
 	}
 }
 
+//开始比赛
+void SpeechManager::startSpeech()
+{
+	//第一轮比赛
+	//1、抽签
+	this->speechDraw();
+
+	//2、比赛
+
+	//3、显示晋级结果
+
+	//第二轮比赛
+
+	//1、抽签
+	this->speechDraw();
+
+	//2、比赛
+
+	//3、显示最终结果
+
+	//4、保存分数
+}
+
+// 抽签
+void SpeechManager::speechDraw()
+{
+	cout << "第 <<" << this->index << ">> 轮比赛选手正在抽签" << endl;
+	cout << "--------------------------------------------" << endl;
+	cout << "抽签后的演讲顺序如下：" << endl;
+
+	if (this->index == 1)
+	{
+		// 第一轮
+		random_shuffle(v1.begin(), v1.end());
+		for (vector<int>::iterator it = v1.begin(); it != v1.end(); it++)
+		{
+			cout << *it << " ";
+		}
+		cout << endl;
+	}
+	else
+	{
+		// 第二轮
+		random_shuffle(v2.begin(), v2.end());
+		for (vector<int>::iterator it = v2.begin(); it != v2.end(); it++)
+		{
+			cout << *it << " ";
+		}
+		cout << endl;
+	}
+	cout << endl;
+
+	system("pause");
+	cout << endl;
+}
+
 SpeechManager::~SpeechManager()
 {
 }
