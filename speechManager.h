@@ -3,12 +3,14 @@
 using namespace std;
 
 // —›Ω≤π‹¿Ì¿‡
-class speechManager
+class SpeechManager
 {
 public:
 
-	speechManager();
+	SpeechManager();
 
-	~speechManager();
+	void showMenu();
+
+	~SpeechManager();
 };
 
