@@ -37,6 +37,9 @@ public:
 	// 比赛
 	void speechContest();
 
+	// 显示比赛结果
+	void showScore();
+
 	~SpeechManager();
 
 	// 第一轮选手比赛编号容器

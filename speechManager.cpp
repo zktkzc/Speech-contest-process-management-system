@@ -79,6 +79,7 @@ void SpeechManager::startSpeech()
 	this->speechContest();
 
 	//3、显示晋级结果
+	this->showScore();
 
 	//第二轮比赛
 
@@ -153,7 +154,7 @@ void SpeechManager::speechContest()
 		deque<double> d;
 		for (int i = 0; i < 10; i++)
 		{
-			double score = rand() % 401 + 600 / 10.f; // 600 ~ 1000
+			double score = (rand() % 401 + 600) / 10.f; // 600 ~ 1000
 			// cout << score << " ";
 			d.push_back(score);
 		}
@@ -205,6 +206,32 @@ void SpeechManager::speechContest()
 
 	cout << "--------第" << this->index << "轮比赛完毕!--------" << endl;
 	system("pause");
+}
+
+// 显示比赛结果
+void SpeechManager::showScore()
+{
+	cout << "--------第" << this->index << "轮晋级的选手信息如下：--------" << endl;
+
+	vector<int> v;
+	if (this->index == 1)
+	{
+		v = v2;
+	}
+	else
+	{
+		v = vVictory;
+	}
+
+	for (vector<int>::iterator it = v.begin(); it != v.end(); it++)
+	{
+		cout << "选手编号：" << *it << " 姓名：" << this->speakers[*it].name << " 得分：" << this->speakers[*it].score[this->index - 1] << endl;
+	}
+	cout << endl;
+
+	system("pause");
+	system("cls");
+	this->showMenu();
 }
 
 SpeechManager::~SpeechManager()
