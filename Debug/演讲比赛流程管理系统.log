@@ -1,5 +1,5 @@
-﻿  Speaker.cpp
-  SpeechManager.cpp
+﻿  SpeechManager.cpp
+D:\Project\C\C++\演讲比赛流程管理系统\SpeechManager.cpp(50,20): warning C4018: “<”: 有符号/无符号不匹配
   演讲比赛流程管理系统.cpp
   正在生成代码...
   演讲比赛流程管理系统.vcxproj -> D:\Project\C\C++\演讲比赛流程管理系统\Debug\演讲比赛流程管理系统.exe

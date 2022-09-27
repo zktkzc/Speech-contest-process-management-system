@@ -17,10 +17,13 @@ public:
 	//退出系统
 	void exitSystem();
 
-	~SpeechManager();
-
 	// 初始化容器和属性
 	void initSpeech();
+
+	// 创建比赛选手
+	void createSpeaker();
+
+	~SpeechManager();
 
 	// 第一轮选手比赛编号容器
 	vector<int> v1;

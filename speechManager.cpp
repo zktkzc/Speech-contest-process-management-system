@@ -4,6 +4,9 @@ SpeechManager::SpeechManager()
 {
 	// 初始化容器和属性
 	this->initSpeech();
+
+	// 创建12名选手
+	this->createSpeaker();
 }
 
 void SpeechManager::showMenu()
@@ -26,10 +29,6 @@ void SpeechManager::exitSystem()
 	exit(0);
 }
 
-SpeechManager::~SpeechManager()
-{
-}
-
 // 初始化容器和属性
 void SpeechManager::initSpeech()
 {
@@ -41,4 +40,34 @@ void SpeechManager::initSpeech()
 
 	// 初始化比赛轮数
 	this->index = 1;
+}
+
+// 创建比赛选手
+void SpeechManager::createSpeaker()
+{
+	string nameSeed = "ABCDEFGHIJKL";
+
+	for (int i = 0; i < nameSeed.size(); i++)
+	{
+		string name = "选手";
+		name += nameSeed[i];
+
+		Speaker sp;
+		sp.name = name;
+
+		for (int j = 0; j < 2; j++)
+		{
+			sp.score[j] = 0;
+		}
+
+		//创建选手编号，并且放到v1容器中
+		this->v1.push_back(i + 10001);
+
+		// 将选手的编号以及对应的选手放入map容器中
+		this->speakers.insert(make_pair(i + 10001, sp));
+	}
+}
+
+SpeechManager::~SpeechManager()
+{
 }
