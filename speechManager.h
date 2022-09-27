@@ -2,7 +2,11 @@
 #include<iostream>
 #include<vector>
 #include<map>
+#include<deque>
+#include<functional>
 #include<algorithm>
+#include<numeric>
+#include<string>
 #include"Speaker.h"
 using namespace std;
 
@@ -29,6 +33,9 @@ public:
 
 	// ≥È«©
 	void speechDraw();
+
+	// ±»»¸
+	void speechContest();
 
 	~SpeechManager();
 
