@@ -7,6 +7,7 @@
 #include<algorithm>
 #include<numeric>
 #include<string>
+#include<fstream>
 #include"Speaker.h"
 using namespace std;
 
@@ -39,6 +40,9 @@ public:
 
 	// 显示比赛结果
 	void showScore();
+
+	// 保存记录
+	void saveRecord();
 
 	~SpeechManager();
 
