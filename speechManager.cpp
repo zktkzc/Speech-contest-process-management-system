@@ -295,13 +295,50 @@ void SpeechManager::loadRecord()
 	ifs.putback(ch); // 将上面读取的单个字符再放回来
 
 	string data;
+	int index = 0;
 
 	while (ifs >> data)
 	{
-		cout << data << endl;
+		// cout << data << endl;
+		vector<string> v; // 存放截取出来的字符串
+		int pos = -1; // 查到逗号位置的变量
+		int start = 0;
+
+		while (true)
+		{
+			pos = data.find(",", start);
+			if (pos == -1)
+			{
+				// 没有找到
+				break;
+			}
+			string temp = data.substr(start, pos - start);
+			v.push_back(temp);
+			start = pos + 1;
+		}
+
+		this->record.insert(make_pair(index, v));
+		index++;
 	}
 
 	ifs.close();
+
+	/*for (map<int, vector<string>>::iterator it = record.begin(); it != record.end(); it++)
+	{
+		cout << it->first << " 冠军编号：" << it->second[0] << " 分数：" << it->second[1] << endl;
+	}*/
+}
+
+// 显示往届记录
+void SpeechManager::showRecord()
+{
+	for (int i = 0; i < this->record.size(); i++)
+	{
+		cout << "第" << i + 1 << "届" << " 冠军编号：" << this->record[i][0] << " 分数：" << this->record[i][1] << " 亚军编号：" << this->record[i][2] << " 分数：" << this->record[i][3] << " 季军编号：" << this->record[i][4] << " 分数：" << this->record[i][5] << endl;
+	}
+
+	system("pause");
+	system("cls");
 }
 
 SpeechManager::~SpeechManager()

@@ -22,7 +22,7 @@ int main()
 			sm.startSpeech();
 			break;
 		case 2:  //查看记录
-			sm.loadRecord();
+			sm.showRecord();
 			break;
 		case 3:  //清空记录
 			break;

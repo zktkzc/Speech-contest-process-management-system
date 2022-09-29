@@ -1,5 +1,6 @@
 ﻿  SpeechManager.cpp
 D:\Project\C\C++\演讲比赛流程管理系统\SpeechManager.cpp(53,20): warning C4018: “<”: 有符号/无符号不匹配
+D:\Project\C\C++\演讲比赛流程管理系统\SpeechManager.cpp(335,20): warning C4018: “<”: 有符号/无符号不匹配
 D:\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.33.31629\include\numeric(34,26): warning C4244: “=”: 从“double”转换到“_Ty”，可能丢失数据
           with
           [
@@ -18,4 +19,6 @@ D:\Project\C\C++\演讲比赛流程管理系统\SpeechManager.cpp(178): message 
               _Ty=int,
               _InIt=std::_Deque_iterator<std::_Deque_val<std::_Deque_simple_types<double>>>
           ]
+  演讲比赛流程管理系统.cpp
+  正在生成代码...
   演讲比赛流程管理系统.vcxproj -> D:\Project\C\C++\演讲比赛流程管理系统\Debug\演讲比赛流程管理系统.exe

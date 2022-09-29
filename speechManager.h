@@ -47,6 +47,9 @@ public:
 	// 读取记录
 	void loadRecord();
 
+	// 显示往届记录
+	void showRecord();
+
 	~SpeechManager();
 
 	// 第一轮选手比赛编号容器
