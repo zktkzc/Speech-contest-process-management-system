@@ -50,6 +50,9 @@ public:
 	// 显示往届记录
 	void showRecord();
 
+	// 清空记录
+	void clearRecord();
+
 	~SpeechManager();
 
 	// 第一轮选手比赛编号容器
