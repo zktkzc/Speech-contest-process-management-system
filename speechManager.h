@@ -44,6 +44,9 @@ public:
 	// 保存记录
 	void saveRecord();
 
+	// 读取记录
+	void loadRecord();
+
 	~SpeechManager();
 
 	// 第一轮选手比赛编号容器
@@ -60,5 +63,11 @@ public:
 
 	// 存放比赛轮数
 	int index;
+
+	// 文件为空的标志
+	bool fielIsEmpty;
+
+	// 往届记录
+	map<int, vector<string>> record;
 };
 
