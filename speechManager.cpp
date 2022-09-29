@@ -43,6 +43,9 @@ void SpeechManager::initSpeech()
 
 	// 初始化比赛轮数
 	this->index = 1;
+
+	// 初始化记录容器
+	this->record.clear();
 }
 
 // 创建比赛选手
@@ -98,6 +101,16 @@ void SpeechManager::startSpeech()
 
 	//4、保存分数
 	this->saveRecord();
+
+	// 重置比赛，获取记录
+	// 初始化容器和属性
+	this->initSpeech();
+
+	// 创建12名选手
+	this->createSpeaker();
+
+	// 获取往届记录
+	this->loadRecord();
 
 	cout << "本届比赛完毕！" << endl;
 	system("pause");
@@ -261,7 +274,8 @@ void SpeechManager::saveRecord()
 
 	// 关闭文件
 	ofs.close();
-
+	// 更改文件状态不为空
+	this->fielIsEmpty = false;
 	cout << "记录保存完毕！" << endl;
 }
 
@@ -274,7 +288,7 @@ void SpeechManager::loadRecord()
 	if (!ifs.is_open())
 	{
 		this->fielIsEmpty = true;
-		cout << "文件不存在" << endl;
+		//cout << "文件不存在" << endl;
 		ifs.close();
 		return;
 	}
@@ -284,7 +298,7 @@ void SpeechManager::loadRecord()
 	ifs >> ch;
 	if (ifs.eof())
 	{
-		cout << "文件为空" << endl;
+		//cout << "文件为空" << endl;
 		this->fielIsEmpty = true;
 		ifs.close();
 		return;
@@ -332,9 +346,16 @@ void SpeechManager::loadRecord()
 // 显示往届记录
 void SpeechManager::showRecord()
 {
-	for (int i = 0; i < this->record.size(); i++)
+	if (this->fielIsEmpty)
 	{
-		cout << "第" << i + 1 << "届" << " 冠军编号：" << this->record[i][0] << " 分数：" << this->record[i][1] << " 亚军编号：" << this->record[i][2] << " 分数：" << this->record[i][3] << " 季军编号：" << this->record[i][4] << " 分数：" << this->record[i][5] << endl;
+		cout << "文件为空或文件不存在" << endl;
+	}
+	else
+	{
+		for (int i = 0; i < this->record.size(); i++)
+		{
+			cout << "第" << i + 1 << "届" << " 冠军编号：" << this->record[i][0] << " 分数：" << this->record[i][1] << " 亚军编号：" << this->record[i][2] << " 分数：" << this->record[i][3] << " 季军编号：" << this->record[i][4] << " 分数：" << this->record[i][5] << endl;
+		}
 	}
 
 	system("pause");

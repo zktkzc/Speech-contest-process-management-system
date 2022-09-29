@@ -1,9 +1,12 @@
 #include<iostream>
+#include<ctime>
 #include"SpeechManager.h"
 using namespace std;
 
 int main()
 {
+	// 添加随机数种子
+	srand((unsigned int)time(NULL));
 
 	SpeechManager sm;
 
