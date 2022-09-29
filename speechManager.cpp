@@ -82,15 +82,19 @@ void SpeechManager::startSpeech()
 	this->showScore();
 
 	//第二轮比赛
+	this->index++;
 
 	//1、抽签
 	this->speechDraw();
 
 	//2、比赛
+	this->speechContest();
 
 	//3、显示最终结果
+	this->showScore();
 
 	//4、保存分数
+
 }
 
 // 抽签
@@ -206,6 +210,7 @@ void SpeechManager::speechContest()
 
 	cout << "--------第" << this->index << "轮比赛完毕!--------" << endl;
 	system("pause");
+	cout << endl;
 }
 
 // 显示比赛结果
